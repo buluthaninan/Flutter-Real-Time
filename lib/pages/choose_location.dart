@@ -11,19 +11,7 @@ class ChooseLocation extends StatefulWidget {
 
 class _ChooseLocationState extends State<ChooseLocation> {
 
-  void getData(){
-    //simulate delay
 
-    Future.delayed(Duration(seconds: 3),(){
-      print("Yoshi");
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
 
 
   @override
