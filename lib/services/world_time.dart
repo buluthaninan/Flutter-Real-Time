@@ -7,7 +7,10 @@ class WorldTime {
   late String flag; // url to an asset flag icaon
   late String url; // location url for API end point
 
-  void getTime() async {
+  WorldTime({required this.location, required this.flag, required this.url});
+
+
+  Future<void> getTime() async {
     //make response
     Response response = await get(Uri.parse("http://worldtimeapi.org/api/timezone/$url"));
     Map data = jsonDecode(response.body);
@@ -20,10 +23,14 @@ class WorldTime {
     //create datetime object
     DateTime now = DateTime.parse(datetime);
     now = now.add(Duration(hours: int.parse(offset)));
-    print(now);
+
+    // set time to string
+    time = now.toString();
+
 
 
   }
 
 
 }
+
