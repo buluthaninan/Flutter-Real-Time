@@ -1,13 +1,15 @@
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 import 'dart:convert';
 
-class WorldTime {
-  late String location; // location name for the UI
-  late String time; // the time in that location
-  late String flag; // url to an asset flag icaon
-  late String url; // location url for API end point
 
-  WorldTime({required this.location, required this.flag, required this.url});
+class WorldTime {
+   String location; // location name for the UI
+   String time; // the time in that location
+   String flag; // url to an asset flag icaon
+   String url; // location url for API end point
+
+  WorldTime({ this.location,  this.flag,  this.url});
 
 
   Future<void> getTime() async {
@@ -27,7 +29,7 @@ class WorldTime {
       now = now.add(Duration(hours: int.parse(offset)));
 
       // set time to string
-      time = now.toString();
+      time = DateFormat.jm().format(now);
     }
 
     catch(e) {

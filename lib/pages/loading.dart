@@ -3,7 +3,7 @@ import 'package:flutter_real_time/services/world_time.dart';
 
 
 class Loading extends StatefulWidget {
-  const Loading({Key? key}) : super(key: key);
+
 
   @override
   _LoadingState createState() => _LoadingState();
